@@ -5,7 +5,20 @@ def ellipse(r):
         t.circle(r,90)
         t.circle(r/2,90)
 
-t.right(45)
-t.speed(5)
-ellipse(200)
+count = 0
+t.speed(100)
+
+while True:
+    t.right(45+count*5)
+    t.penup()
+    t.goto(count*5, count*-5)
+    t.pendown()
+    ellipse(200)
+    count += 1
+    if count > 72:
+        break
+    t.home()
+
+
+t.hideturtle()
 t.done()
